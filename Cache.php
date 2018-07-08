@@ -1,6 +1,6 @@
 <?php
 namespace BoostPHP\Cache{
-    require_once __DIR__ . 'BoostPHP.internal.php';
+    require_once __DIR__ . '/BoostPHP.internal.php';
     class AutoMode{
     
         public static $m_CacheInfos = array(); //it will be set into array(array("cachefullpath",needUpdate T/F), array(...), array(...))
