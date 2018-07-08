@@ -10,6 +10,7 @@ Put the files in BoostPHP directory and simply add following code to your PHP fi
 require_once __DIR__ . "/BoostPHP/GeneralUtility.php";
 require_once __DIR__ . "/BoostPHP/Cache.php";
 require_once __DIR__ . "/BoostPHP/Encryption.AES.php";
+require_once __DIR__ . "/BoostPHP/FastCompare.php";
 ```
 
 Not every files need to be required, you can require them based on your needs.
