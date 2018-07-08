@@ -1,5 +1,5 @@
 <?php
-namespace BoostPHP\Cache\AutoMode{
+namespace BoostPHP\Cache{
     require_once __DIR__ . 'BoostPHP.internal.php';
     class AutoMode{
     

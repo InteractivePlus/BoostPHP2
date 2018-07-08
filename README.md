@@ -1,5 +1,5 @@
 # BoostPHP2
-An fast, simple, require-and-go out-of-box PHP framework built for PHP7.1+
+A fast, simple, require-and-go out-of-box PHP framework built for PHP7.1+
 
 ---
 
