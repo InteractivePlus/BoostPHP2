@@ -1,6 +1,6 @@
 <?php
 namespace BoostPHP{
-    require_once __DIR__ . 'BoostPHP.settings.php';
+    require_once __DIR__ . '/../../internal/BoostPHP.settings.php';
     
     /**
      * Output to the file, equal to echo

@@ -1,6 +1,6 @@
 <?php
 namespace BoostPHP\UploadFile{
-    require_once 'BoostPHP.internal.php';
+    require_once __DIR__ . '/internal/BoostPHP.internal.php';
     
     /**
 	* Deal with the file that users uploaded

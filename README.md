@@ -1,5 +1,5 @@
 # BoostPHP2
-A fast, simple, require-and-go out-of-box PHP framework built for PHP7.1+
+A fast, simple, require-and-go out-of-box PHP framework built for PHP5, PHP7
 
 ---
 
@@ -7,15 +7,7 @@ A fast, simple, require-and-go out-of-box PHP framework built for PHP7.1+
 Put the files in BoostPHP directory and simply add following code to your PHP file.
 
 ```php
-require_once __DIR__ . "/BoostPHP/GeneralUtility.php";
-require_once __DIR__ . "/BoostPHP/Cache.php";
-require_once __DIR__ . "/BoostPHP/Encryption.AES.php";
-require_once __DIR__ . "/BoostPHP/FastCompare.php";
-require_once __DIR__ . "/BoostPHP/MailFunction.php";
-require_once __DIR__ . "/BoostPHP/MySQLFunction.php";
-require_once __DIR__ . "/BoostPHP/UploadFileDealt.php";
-require_once __DIR__ . "/BoostPHP/Encryption.Hash.php";
+require_once __DIR__ . "/BoostPHP/autoload.php";
 ```
 
-Not every files need to be required, you can require them based on your needs.
 Manuals will come later.

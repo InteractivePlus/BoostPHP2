@@ -1,5 +1,6 @@
 <?php
 namespace BoostPHP\Encryption{
+    require_once __DIR__ . '/internal/BoostPHP.internal.php';
     class SHA{
         /**
         * Encode the string using SHA256 Encoding Method(With Salt)

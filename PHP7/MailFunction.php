@@ -1,7 +1,7 @@
 <?php
 namespace BoostPHP\Mail{
-    require_once __DIR__ . "/BoostPHP.internal.php";
-    require_once __DIR__ . "/utilities/phpMailer/class.phpmailer.php";
+    require_once __DIR__ . "/internal/BoostPHP.internal.php";
+    require_once __DIR__ . "/../utilities/phpMailer/class.phpmailer.php";
     /**
 	 * Send a mail using SMTP
 	 * returns false on failure

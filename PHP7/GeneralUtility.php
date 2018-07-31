@@ -1,6 +1,6 @@
 <?php
 namespace BoostPHP{
-    require_once 'BoostPHP.internal.php';
+    require_once __DIR__ . '/internal/BoostPHP.internal.php';
 
     /**
 	 * Get the IP of the visitor

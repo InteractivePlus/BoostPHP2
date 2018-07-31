@@ -1,6 +1,6 @@
 <?php
 namespace BoostPHP\Encryption{
-    require_once __DIR__ . '/BoostPHP.internal.php';
+    require_once __DIR__ . '/internal/BoostPHP.internal.php';
     class AES{
         public static $isOpenSSL = false;
         public static $eachEncryptionOpenSSL = array("ECB"=>false,"CFB8"=>false,"CBC"=>false,"OFB"=>false);

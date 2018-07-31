@@ -1,5 +1,7 @@
 <?php
 namespace BoostPHP\MySQL{
+	require_once __DIR__ . '/internal/BoostPHP.internal.php';
+	
 	/**
 	 * Connect to a database using mysqli
 	 * returns false on failure

@@ -1,6 +1,6 @@
 <?php
 namespace BoostPHP\FastCompare{
-    require_once __DIR__ . "/BoostPHP.internal.php";
+    require_once __DIR__ . "/internal/BoostPHP.internal.php";
     /**
 	* Sort Array by Native Quick Sort Method(Partition)
 	* About 20 times faster then quicksort implemented by the PHP code.
@@ -16,4 +16,5 @@ namespace BoostPHP\FastCompare{
         usort($array, $functionName);
         return;
     }
+    
 }
