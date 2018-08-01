@@ -1,7 +1,9 @@
 <?php
 namespace BoostPHP\Settings{
     //Settings here, do not delete variables
-    $boostPHPSourceList = array(
+    
+    class Setting{
+    public static $boostPHPSourceList = array(
         "Cache.php",
         "Encryption.AES.php",
         "Encryption.Hash.php",
@@ -12,4 +14,5 @@ namespace BoostPHP\Settings{
         "MySQLFunction.php",
         "UploadFileDealt.php"
     );
+    }
 }
