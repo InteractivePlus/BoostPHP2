@@ -25,11 +25,11 @@ namespace BoostPHP\Cache{
             if(file_exists($cacheFullPath)){
                 if(time()-filemtime($cacheFullPath) < $cacheAvailableDuration){
                     \BoostPHP::output(file_get_contents($cacheFullPath));
-                    AudoMode::$m_CacheInfos[count(AudoMode::$m_CacheInfos)] = array($cacheFullPath,false);
+                    AutoMode::$m_CacheInfos[count(AutoMode::$m_CacheInfos)] = array($cacheFullPath,false);
                     return false;
                 }
             }
-            AudoMode::$m_CacheInfos[count(AudoMode::$m_CacheInfos)] = array($cacheFullPath, true);
+            AutoMode::$m_CacheInfos[count(AutoMode::$m_CacheInfos)] = array($cacheFullPath, true);
             return true;
         }
 
@@ -39,15 +39,15 @@ namespace BoostPHP\Cache{
          * @return void
          */
         public static function cacheEnd() : void{
-            $cacheCount = count(AudoMode::$m_CacheInfos);
-            $blockInfo = AudoMode::$m_CacheInfos[$cacheCount-1];
+            $cacheCount = count(AutoMode::$m_CacheInfos);
+            $blockInfo = AutoMode::$m_CacheInfos[$cacheCount-1];
             if($blockInfo[1]){
                 $fp = fopen($blockInfo[0],'w');
                 fwrite($fp,ob_get_contents());
                 fclose($fp);
             }
             ob_end_flush();
-            unset(AudoMode::$m_CacheInfos[$cacheCount-1]); //delete the cache block info
+            unset(AutoMode::$m_CacheInfos[$cacheCount-1]); //delete the cache block info
         }
     }
     class ManualMode{
@@ -65,11 +65,11 @@ namespace BoostPHP\Cache{
             if(file_exists($cacheFullPath)){
                 if(time()-filemtime($cacheFullPath) < $cacheAvailableDuration){
                     \BoostPHP::output(file_get_contents($cacheFullPath));
-                    AudoMode::$m_CacheInfos[count(AudoMode::$m_CacheInfos)] = array($cacheFullPath,false);
+                    ManualMode::$m_CacheInfos[count(ManualMode::$m_CacheInfos)] = array($cacheFullPath,false);
                     return false;
                 }
             }
-            AudoMode::$m_CacheInfos[count(AudoMode::$m_CacheInfos)] = array($cacheFullPath, true);
+            ManualMode::$m_CacheInfos[count(ManualMode::$m_CacheInfos)] = array($cacheFullPath, true);
             return true;
         }
 
@@ -79,15 +79,15 @@ namespace BoostPHP\Cache{
          * @return void
          */
         public static function cacheEnd() : void{
-            $cacheCount = count(AudoMode::$m_CacheInfos);
-            $blockInfo = AudoMode::$m_CacheInfos[$cacheCount-1];
+            $cacheCount = count(ManualMode::$m_CacheInfos);
+            $blockInfo = ManualMode::$m_CacheInfos[$cacheCount-1];
             if($blockInfo[1]){
                 $fp = fopen($blockInfo[0],'w');
                 fwrite($fp,ob_get_contents());
                 fclose($fp);
             }
             ob_end_flush();
-            unset(AudoMode::$m_CacheInfos[$cacheCount-1]); //delete the cache block info
+            unset(ManualMode::$m_CacheInfos[$cacheCount-1]); //delete the cache block info
         }
     }   
 }
