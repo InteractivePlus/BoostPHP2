@@ -24,7 +24,7 @@ namespace BoostPHP\Cache{
             $cacheFullPath = $cacheFolder . $cacheFileName;
             if(file_exists($cacheFullPath)){
                 if(time()-filemtime($cacheFullPath) < $cacheAvailableDuration){
-                    \BoostPHP::output(file_get_contents($cacheFullPath));
+                    \BoostPHP\output(file_get_contents($cacheFullPath));
                     AutoMode::$m_CacheInfos[count(AutoMode::$m_CacheInfos)] = array($cacheFullPath,false);
                     return false;
                 }
@@ -64,7 +64,7 @@ namespace BoostPHP\Cache{
             ob_start();
             if(file_exists($cacheFullPath)){
                 if(time()-filemtime($cacheFullPath) < $cacheAvailableDuration){
-                    \BoostPHP::output(file_get_contents($cacheFullPath));
+                    \BoostPHP\output(file_get_contents($cacheFullPath));
                     ManualMode::$m_CacheInfos[count(ManualMode::$m_CacheInfos)] = array($cacheFullPath,false);
                     return false;
                 }
