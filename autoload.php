@@ -1,6 +1,6 @@
 <?php
 namespace BoostPHP\Internal{
-    require_once __DIR__ . '/internal/BoostPHP.internal.php';
+    require_once __DIR__ . '/internal/BoostPHP.settings.php';
     if (!defined('PHP_VERSION_ID')) {
         $version = explode('.', PHP_VERSION);
         define('PHP_VERSION_ID', ($version[0] * 10000 + $version[1] * 100 + $version[2]));
