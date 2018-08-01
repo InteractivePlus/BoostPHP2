@@ -25,7 +25,7 @@ namespace BoostPHP{
      */
     function redirectPageURL(string $URL) : void{
         header("Location: " . $URL);
-		BoostPHP::printContent('<script>document.location="' . $URL . '";window.location="' . $URL . '";location.href="' . $URL . '";</script>');
-		BoostPHP::printContent('<noscript><meta http-equiv="refresh" content="0;URL=\'' . $URL . '\'" /></nocript>');
+		\BoostPHP\output('<script>document.location="' . $URL . '";window.location="' . $URL . '";location.href="' . $URL . '";</script>');
+		\BoostPHP\output('<noscript><meta http-equiv="refresh" content="0;URL=\'' . $URL . '\'" /></nocript>');
     }
 }
