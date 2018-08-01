@@ -18,7 +18,7 @@ namespace BoostPHP\Internal{
     }else{ //PHP_MAJOR_VERSION >= 7 && PHP_MINOR_VERSION != 0
         $SourceBaseDir = __DIR__ . "/PHP7/";
     }
-    foreach (\BoostPHP\Settings\boostPHPSourceList as $SourceFile){
+    foreach (\BoostPHP\Settings\Setting::$boostPHPSourceList as $SourceFile){
         require_once($SourceBaseDir . $SourceFile);
     }
 }
