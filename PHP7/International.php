@@ -36,7 +36,7 @@ namespace BoostPHP\International{
             }
         }
         unset($acceptLangArray);
-        \BoostPHP\FastCompare::customCompareSort($LanguageFinalArray,"customLanguageArrayCompare");
+        \BoostPHP\FastCompare\customCompareSort($LanguageFinalArray,"customLanguageArrayCompare");
         return $LanguageFinalArray;
     }   
 }
