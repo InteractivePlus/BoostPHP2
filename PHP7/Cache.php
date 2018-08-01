@@ -16,7 +16,7 @@ namespace BoostPHP\Cache{
         public static function cacheStart(int $cacheAvailableDuration, string $cacheFolder = "", bool $differentForPostData = true) : bool{
             ob_start();
             $cacheFileName = "";
-            if(differentForPostData){
+            if($differentForPostData){
                 $cacheFileName = md5($_SERVER['REQUEST_URI']) . md5(file_get_contents("php://input")) . '.html';//php://input is the POST data
             }else{
                 $cacheFileName = md5($_SERVER['REQUEST_URI']) . '.html';
