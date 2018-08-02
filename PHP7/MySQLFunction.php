@@ -19,8 +19,25 @@ namespace BoostPHP\MySQL{
 		}
 		
 		/**
-		 * Select datas from the Database
+		 * Query an SQL Statement
 		 * returns false on failure
+		 * @param MySQLi Connection Data
+		 * @param string The statement you want to query
+		 * @access public
+		 * @return bool
+		 */
+		public static function querySQL($MySQLiConn, string $SQLStatement) : bool {
+			$SelectRST = mysqli_query($MySQLiConn, $SQLStatement);
+			if(!$SelectRST){
+				return false;
+			}else{
+				return true;
+			}
+		}
+
+		/**
+		 * Select datas from the Database
+		 * returns array that has a count of 0 on failure
 		 * @param MySQLi Connection Data
 		 * @param string The statement you want to query for selection, need to be prevented from SQL Injection
 		 * @access public
@@ -31,8 +48,9 @@ namespace BoostPHP\MySQL{
 		public static function selectIntoArray_FromStatement($MySQLiConn, string $SelectStatement) : array{
 			$SelectRST = mysqli_query($MySQLiConn, $SelectStatement);
 			
+			$ResultArr = array('count' => 0);
 			if(!$SelectRST){
-				return false;
+				return $ResultArr;
 			}
 			$Selectcount = mysqli_num_rows($SelectRST);
 			$ResultArr['count'] = $Selectcount;
@@ -55,7 +73,7 @@ namespace BoostPHP\MySQL{
 		
 		/**
 		 * Select datas from the Database
-		 * returns false on failure
+		 * returns 0 on failure
 		 * @param MySQLi Connection Data
 		 * @param string Table name,  need to be prevented from SQL Injection
 		 * @param array The array that requirements should fit, should be like array(Key=>Value, Key1=>Value1)
@@ -102,7 +120,7 @@ namespace BoostPHP\MySQL{
 			}
 			$MRST=mysqli_query($MySQLiConn,$SelectState);
 			if(!$MRST){
-				return false;
+				return 0;
 			}
 			$Selectcount = mysqli_num_rows($MRST);
 			$ResultArr['count'] = $Selectcount;
@@ -125,7 +143,7 @@ namespace BoostPHP\MySQL{
 
 		/**
 		 * Check data exists that fits requirements from the Database
-		 * returns false on failure
+		 * returns 0 on failure
 		 * @param MySQLi Connection Data
 		 * @param string The table you want to query for selection, need to be prevented from SQL Injection
 		 * @param array The array that requirements should fit, should be like array(Key=>Value, Key1=>Value1)
@@ -148,7 +166,7 @@ namespace BoostPHP\MySQL{
 			}
 			$MRST=mysqli_query($MySQLiConn,$SelectState);
 			if(!$MRST){
-				return false;
+				return 0;
 			}
 			$MyArr = mysqli_fetch_array($MRST);
 			$MyRSTNum = $MyArr['COUNT(*)'];
