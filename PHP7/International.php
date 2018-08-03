@@ -1,5 +1,5 @@
 <?php
-namespace BoostPHP\International{
+namespace BoostPHP{
     require_once __DIR__ . '/internal/BoostPHP.internal.php';
     require_once __DIR__ . '/FastCompare.php';
     class International{
