@@ -29,7 +29,11 @@ namespace BoostPHP{
             for($i = 0; $i < count($acceptLangArray); $i++){
                 $eachArray = $acceptLangArray[$i];
                 $tmpArray = explode(";",$eachArray);
-                $LanguageFinalArray[$i]["Language"] = $tmpArray[0];
+                if($toLower){
+                    $LanguageFinalArray[$i]["Language"] = strtolower($tmpArray[0]);
+                }else{
+                    $LanguageFinalArray[$i]["Language"] = $tmpArray[0];
+                }
                 if(count($tmpArray) > 1){
                     $LanguageFinalArray[$i]["Weight"] = floatval($tmpArray[1]);
                 }else{

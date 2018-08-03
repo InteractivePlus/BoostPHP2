@@ -1,5 +1,5 @@
 <?php
-namespace BoostPHP\UploadFile{
+namespace BoostPHP{
     require_once __DIR__ . '/internal/BoostPHP.internal.php';
 	
 	class UploadFile{

@@ -1,5 +1,5 @@
 <?php
-namespace BoostPHP\Mail{
+namespace BoostPHP{
     require_once __DIR__ . "/internal/BoostPHP.internal.php";
     require_once __DIR__ . "/../utilities/phpMailer/class.phpmailer.php";
 	
