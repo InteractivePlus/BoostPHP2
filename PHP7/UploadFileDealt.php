@@ -13,7 +13,7 @@ namespace BoostPHP{
 		* @access public
 		* @return boolean true when succeed
 		*/
-		public static function dealUploadFile($UploadName, $PutTo, $AllowedExt = array("*"), $AllowedSize = 0){
+		public static function dealUploadFile(string $UploadName, string $PutTo, array $AllowedExt = array("*"), int $AllowedSize = 0) : bool{
 			if(empty($_FILES[$UploadName])){return false;}
 			$MyFile = $_FILES[$UploadName];
 			if($MyFile['error']>0){return false;}
@@ -43,8 +43,8 @@ namespace BoostPHP{
 		* @access public
 		* @return string the original name
 		*/
-		public static function getUploadFileOriginalName($UploadName){
-			if(!empty($_FILE[$UploadName])){return $_FILE[$UploadName]['name'];}else{return false;}
+		public static function getUploadFileOriginalName(string $UploadName) : string{
+			if(!empty($_FILE[$UploadName])){return $_FILE[$UploadName]['name'];}else{return "false";}
 		}
 		
 		/**
@@ -54,8 +54,8 @@ namespace BoostPHP{
 		* @access public
 		* @return string the original extension
 		*/
-		public static function getUploadFileOriginalExt($UploadName){
-			if(!empty($_FILE[$UploadName])){return end(explode(".",$_FILE[$UploadName]['name']));}else{return false;}
+		public static function getUploadFileOriginalExt(string $UploadName) : string{
+			if(!empty($_FILE[$UploadName])){return end(explode(".",$_FILE[$UploadName]['name']));}else{return "false";}
 		}
 	}
 }
