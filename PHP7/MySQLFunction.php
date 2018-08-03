@@ -279,11 +279,10 @@ namespace BoostPHP\MySQL{
 		/**
 		 * Close a MySQL Connection
 		 * @param MySQLi Connection Data
-		 * @return bool Always true
+		 * @return void
 		 */
-		public static function closeConn($MySQLiConn) : bool{
+		public static function closeConn($MySQLiConn) : void{
 			mysqli_close($MySQLiConn);
-			return true;
 		}
 	}
 }
