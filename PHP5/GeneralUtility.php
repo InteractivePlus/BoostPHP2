@@ -37,8 +37,9 @@ namespace BoostPHP{
          * @param array Cookies to POST with
          * @access public
          * @return array {'code'=>HTTPStat, 'content'=>Content}
+         * code will be set to 400 if on error
          */
-        public static function postToAddr($url,$data,$ref,$cookie = null){ // 模拟提交数据函数
+        public static function postToAddr($url,$data = array(),$ref = '',$cookie = array()){ // 模拟提交数据函数
             $curl = curl_init(); // 启动一个CURL会话
             curl_setopt($curl, CURLOPT_URL, $url); // 要访问的地址
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0); // 对认证证书来源的检查
@@ -68,11 +69,11 @@ namespace BoostPHP{
          * @param string The URL You want to access
          * @param string The reference URL You want to show
          * @param array The cookies you want to set
-         * @param array Datas(Params) you want to put in the address
          * @access public
          * @return array {'code'=>HTTP_Stat, 'content'=>Content}
+         * code will be set to 400 if on error
          */
-        public static function getFromAddr($url, $ref, $cookie = null, $data = null){
+        public static function getFromAddr($url, $ref = '', $cookie = array()){
             $curl = curl_init(); // 启动一个CURL会话
             curl_setopt($curl, CURLOPT_URL, $url); // 要访问的地址
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0); // 对认证证书来源的检查
