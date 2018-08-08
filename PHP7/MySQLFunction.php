@@ -85,7 +85,7 @@ namespace BoostPHP{
 		 * @returnKey count[int] - how many results can be shown
 		 * @returnKey result[array] - the result of the selection(only when count > 0)
 		 */
-		public static function selectIntoArray_FromRequirements($MySQLiConn, string $Table, array $SelectRequirement = array(), array $OrderByArray = array(), int $NumLimit = -1, int $OffsetNum = 0) : int{
+		public static function selectIntoArray_FromRequirements($MySQLiConn, string $Table, array $SelectRequirement = array(), array $OrderByArray = array(), int $NumLimit = -1, int $OffsetNum = 0) : array{
 			$SelectState = "SELECT * FROM " . $Table;
 			
 			if(!empty($SelectRequirement)){
