@@ -73,7 +73,7 @@ namespace BoostPHP{
 		
 		/**
 		 * Select datas from the Database
-		 * returns 0 on failure
+		 * returns an array that has a count of 0 on failure
 		 * @param MySQLi Connection Data
 		 * @param string Table name,  need to be prevented from SQL Injection
 		 * @param array The array that requirements should fit, should be like array(Key=>Value, Key1=>Value1)
@@ -120,7 +120,7 @@ namespace BoostPHP{
 			}
 			$MRST=mysqli_query($MySQLiConn,$SelectState);
 			if(!$MRST){
-				return 0;
+				return array('count' => 0);
 			}
 			$Selectcount = mysqli_num_rows($MRST);
 			$ResultArr['count'] = $Selectcount;
