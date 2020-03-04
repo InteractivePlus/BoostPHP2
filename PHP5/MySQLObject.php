@@ -42,7 +42,7 @@ namespace BoostPHP{
             $this->disconnect();
 			$this->connect();
 			if(!$this->isConnected){
-                throw new Exception("Failure to reconnect to MySQL Database");
+                throw new \Exception("Failure to reconnect to MySQL Database");
             }
 		}
 		
