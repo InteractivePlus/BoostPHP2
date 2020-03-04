@@ -40,7 +40,10 @@ namespace BoostPHP{
 		
 		public function reconnect(){
             $this->disconnect();
-            $this->connect();
+			$this->connect();
+			if(!$this->isConnected){
+                throw new Exception("Failure to reconnect to MySQL Database");
+            }
 		}
 		
 		public function isAlive() : bool{

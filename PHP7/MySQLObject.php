@@ -1,6 +1,9 @@
 <?php
 namespace BoostPHP{
-    require_once __DIR__ . '/internal/BoostPHP.internal.php';
+
+use Exception;
+
+require_once __DIR__ . '/internal/BoostPHP.internal.php';
     require_once __DIR__ . '/MySQLFunction.php';
     class MySQLConn{
         private $MySQLiConn;
@@ -41,6 +44,9 @@ namespace BoostPHP{
         public function reconnect() : void{
             $this->disconnect();
             $this->connect();
+            if(!$this->isConnected){
+                throw new \Exception("Failure to reconnect to MySQL Database");
+            }
         }
 
         public function isAlive() : bool{
