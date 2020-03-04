@@ -42,6 +42,18 @@ namespace BoostPHP{
             $this->disconnect();
             $this->connect();
         }
+
+        public function isAlive() : bool{
+            $keepAliveStatement = mysqli_ping($this->MySQLiConn);
+            return $keepAliveStatement;
+        }
+
+        public function keepAlive() : void{
+            $isAlive = $this->isAlive();
+            if(!$isAlive){
+                $this->reconnect();
+            }
+        }
         
         /**
 		 * Query an SQL Statement
